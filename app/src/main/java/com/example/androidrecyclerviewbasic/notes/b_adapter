@@ -1,0 +1,7 @@
+//adapter adalah component xml yang akan berada di dalam component xml recycler view.
+//untuk mengetahui contoh sebuah adapter lihat di package res.layout, file adapter_main.xml
+//dan untuk meng include component xml adapter ke dalam component xml recycler view, cukup menggunakan element xml 'tools:listitem'
+
+
+//untuk mengetahui element-element penting untuk mengatur posisi component xml adapter di dalam component xml recycler view, lihat di package
+//res.layout, file activity_main.xml, code 002

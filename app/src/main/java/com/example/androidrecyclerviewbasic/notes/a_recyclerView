@@ -1,0 +1,5 @@
+//recycler view adalah sebuah cara pembuatan view secara khusus untuk menampilkan daftar-daftar data.
+//inti dari pembuatan recycler view ada dua yaitu component xml nya, lalu class callback dari component xml tersebut.
+
+//untuk mengetahui cara pembuatan component xml recycler view lihat di package res.layout, file activity_main.xml, code 001
+//untuk mengetahui cara pembuatan class callback dari component xml recyclerView lihat di class MainAdapter.

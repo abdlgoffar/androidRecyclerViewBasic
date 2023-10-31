@@ -1,0 +1,6 @@
+//recycler view callback class biasa digunakan untuk melakukan modifikasi atau config dari code component xml recycler view yang sudah dibuat
+//dengan  recycler view callback class maka semua logic-logic code bisa dibuat secara systematis dan terstruktur.
+
+//untuk mengetahui contoh recycler view callback class, lihat di class MainAdapter.
+
+

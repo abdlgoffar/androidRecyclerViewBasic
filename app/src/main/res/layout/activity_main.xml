@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+<!--    code 001, contoh component recycler view -->
+   <androidx.recyclerview.widget.RecyclerView
+       android:id="@+id/activityMainRecyclerView"
+       android:layout_width="0dp"
+       android:layout_height="0dp"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintBottom_toBottomOf="parent"
+       tools:listitem="@layout/adapter_main"
+       tools:itemCount="15"
+       app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+       app:spanCount="2"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--CATATAN PENTING-->
+<!--element-element xml penting untuk mengatur posisi component xml adapter yang berada di dalam component xml recycler view:
+1. tools:listitem -> digunakan untuk meng include component xml adapter, tapi hanya untuk preview/debugging.
+2. tools:itemCount -> digunakan untuk mengatur jumlah component adapter yang mau di tampilkan, tapi hanya untuk preview/debugging.
+3. app:layoutManager="androidx.recyclerview.widget.GridLayoutManager" -> digunakan untuk mengatur jumlah column dari view yang dibuat, dengan menambahkan
+element xml tambahan yaitu app:spanCount="2" dengan element tambahan ini maka column pada view akan menjadi dua.
+
+-->
