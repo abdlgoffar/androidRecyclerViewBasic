@@ -3,13 +3,24 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="10dp">
+    android:padding="10dp"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <TextView
         android:id="@+id/adapterMainTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        tools:text="Test Item Name"
+        android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
+    <ImageView
+        android:id="@+id/adapterMainImageView"
+        tools:src="@drawable/laptop"
+        android:adjustViewBounds="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adapterMainTextView"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

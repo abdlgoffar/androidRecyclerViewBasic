@@ -3,11 +3,12 @@ package com.example.androidrecyclerviewbasic
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 //contoh recycler view atau adapter class callback
-class MainAdapter(private val data: List<String>, private val event: ListenerMainAdapter): RecyclerView.Adapter<MainAdapter.ViewHolderMainAdapter>() {
+class MainAdapter(private val data: List<MainModel>): RecyclerView.Adapter<MainAdapter.ViewHolderMainAdapter>() {
 
 
     /**
@@ -30,11 +31,8 @@ class MainAdapter(private val data: List<String>, private val event: ListenerMai
      * selain itu method ini juga bisa digunakan untuk menambahkan listener contohnya seperti event onClick dan lain-lain.
      */
     override fun onBindViewHolder(holder: ViewHolderMainAdapter, position: Int) {
-        holder.adapterMainTextView.text =  data[position]
-
-        holder.adapterMainTextView.setOnClickListener {
-            event.onClick(data[position])
-        }
+        holder.adapterMainTextView.text =  data[position].name
+        holder.adapterMainImageView.setImageResource(data[position].image)
     }
 
     /**
@@ -42,6 +40,7 @@ class MainAdapter(private val data: List<String>, private val event: ListenerMai
      */
     class ViewHolderMainAdapter(view: View): RecyclerView.ViewHolder(view) {
         val adapterMainTextView = view.findViewById<TextView>(R.id.adapterMainTextView)
+        val adapterMainImageView = view.findViewById<ImageView>(R.id.adapterMainImageView)
     }
 
     /**

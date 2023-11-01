@@ -12,12 +12,13 @@ class MainActivity : AppCompatActivity() {
 
 
         //call adapter
-        val mainAdapter =  MainAdapter(listOf<String>("abdul goffar", "cristiano ronaldo", "lionel messi", "donald trump"), object: MainAdapter.ListenerMainAdapter {
-            override fun onClick(data: String) {
-                Log.d("MainActivity", data)
-            }
+        val mainAdapter =  MainAdapter(
+            listOf<MainModel>(
+                MainModel(1, "laptop", R.drawable.laptop),
+                MainModel(2, "mouse", R.drawable.mouse),
+                MainModel(3, "keyboard", R.drawable.keyboard),
+                MainModel(4, "monitor", R.drawable.monitor)))
 
-        })
         findViewById<RecyclerView>(R.id.activityMainRecyclerView).adapter = mainAdapter
 
     }
