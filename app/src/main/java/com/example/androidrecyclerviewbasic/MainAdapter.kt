@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 //contoh recycler view atau adapter class callback
-class MainAdapter(private val data: List<String>): RecyclerView.Adapter<MainAdapter.ViewHolderMainAdapter>() {
+class MainAdapter(private val data: List<String>, private val event: ListenerMainAdapter): RecyclerView.Adapter<MainAdapter.ViewHolderMainAdapter>() {
 
 
     /**
@@ -26,11 +26,15 @@ class MainAdapter(private val data: List<String>): RecyclerView.Adapter<MainAdap
 
     /**
      * method ini digunakan untuk setting/mengisi data
-     * component xml adapter yang sudah di setting dengan nested class yang extends ke RecyclerView.ViewHolder seperti contoh dibawah.
-     * selain itu method ini juga bisa digunakan untuk menambahkan event-event listener
+     * component xml adapter yang sudah di setting dengan nested class yang extends ke RecyclerView.ViewHolder seperti dibawah.
+     * selain itu method ini juga bisa digunakan untuk menambahkan listener contohnya seperti event onClick dan lain-lain.
      */
     override fun onBindViewHolder(holder: ViewHolderMainAdapter, position: Int) {
         holder.adapterMainTextView.text =  data[position]
+
+        holder.adapterMainTextView.setOnClickListener {
+            event.onClick(data[position])
+        }
     }
 
     /**
@@ -38,5 +42,12 @@ class MainAdapter(private val data: List<String>): RecyclerView.Adapter<MainAdap
      */
     class ViewHolderMainAdapter(view: View): RecyclerView.ViewHolder(view) {
         val adapterMainTextView = view.findViewById<TextView>(R.id.adapterMainTextView)
+    }
+
+    /**
+     * interface untuk contract event-event listener
+     */
+    interface ListenerMainAdapter {
+        fun onClick(data: String)
     }
 }
